@@ -7,13 +7,9 @@ import { HttpClient } from '@angular/common/http';
 import { map } from "rxjs/operators"
 
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })
-
 
 export class ServizService{
     
@@ -142,6 +138,7 @@ export class ServizService{
     cuidad(){
       
       return this.usarHttp.get('https://www.datos.gov.co/resource/xdk5-pm3f.json');
+    
     }
 
 
@@ -224,6 +221,7 @@ export class ServizService{
               return datos
 
             })
+
           )
     }
 
@@ -301,7 +299,7 @@ export class ServizService{
         
         return this.usarHttp.get('https://registrocolaboradores-default-rtdb.firebaseio.com/colaboradores.json')
                     .pipe(
-                      map( resp=>{
+                      map( resp => {
                         
                          /*--creamos un arreglo nuevo--*/
                          const GuardarArr:any = []; 
